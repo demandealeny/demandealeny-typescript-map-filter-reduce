@@ -13,25 +13,53 @@ const bernard: User = {
 const bianca = {
   id: 97,
 };
-const total = (total: number, price: number) => price + total;
-const productTotal = (total: number, p: Product) => p.discountedPrice + total;
-const productsTotal = (cart: Cart) => cart.products.reduce(productTotal, 0);
 
-const discountedTotal = (carts: Cart[], user: User) => {
-  const byUser = (cart: Cart) => cart.userId === user.id;
 
-  return carts
-    .filter(byUser)
-    .map(productsTotal)
-    .reduce(total, 0);
-};
+
+
+
+
+
+
+
+
+
+
+const _total = (total: number, price: number) => price + total;
+const _productTotal = (total: number, p: Product) => p.discountedPrice + total;
+const _productsTotal = (cart: Cart) => cart.products.reduce(_productTotal, 0);
 
 const _discountedTotal = (carts: Cart[], user: User) => {
+  const _byUser = (cart: Cart) => cart.userId === user.id;
+
+  return carts
+    .filter(_byUser)
+    .map(_productsTotal)
+    .reduce(_total, 0);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const discountedTotal = (carts: Cart[], user: User) => {
   let userCarts: Cart[] = [];
 
-  for (const candidate of carts) {
-    if (candidate.userId === user.id) {
-      userCarts.push(candidate);
+  for (const cart of carts) {
+    if (cart.userId === user.id) {
+      userCarts.push(cart);
     }
   }
 
@@ -47,6 +75,17 @@ const _discountedTotal = (carts: Cart[], user: User) => {
 
   return total;
 };
+
+
+
+
+
+
+
+
+
+
+
 const resultBianca = discountedTotal(carts, bianca);
 const resultBernard = discountedTotal(carts, bernard);
 
