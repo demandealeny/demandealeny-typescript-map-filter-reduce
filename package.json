@@ -2,11 +2,12 @@
   "name": "demande-a-leny-map-filter-reduce",
   "version": "0.0.0",
   "private": true,
-  "main": "src/index.ts",
   "dependencies": {
+    "ts-jest": "28.0.1",
     "typescript": "^4.6.4"
   },
   "keywords": [
+    "map",
     "filter",
     "typescript",
     "reduce"

@@ -1,18 +1,4 @@
-import orders from "./orders";
-import type { Order, Product } from "./orders";
-
-console.clear();
-
-interface User {
-  id: number;
-}
-
-const bernard: User = {
-  id: 83
-};
-const bianca = {
-  id: 97
-};
+import type { Order, Product } from "./types";
 
 const _total = (total: number, price: number) => price + total;
 const _productTotal = (total: number, p: Product) => p.discountedPrice + total;
@@ -24,7 +10,7 @@ const _discountedTotal = (orders: Order[], user: User) => {
   return orders.filter(_byUser).map(_productsTotal).reduce(_total, 0);
 };
 
-const discountedTotal = (orders: Order[], user: User) => {
+export const discountedTotal = (orders: Order[], user: User) => {
   let userOrders: Order[] = [];
 
   for (const Order of orders) {
@@ -45,9 +31,3 @@ const discountedTotal = (orders: Order[], user: User) => {
 
   return total;
 };
-
-const resultBianca = discountedTotal(orders, bianca);
-const resultBernard = discountedTotal(orders, bernard);
-
-console.log("Bianca paid", resultBianca);
-console.log("Bernard paid", resultBernard);

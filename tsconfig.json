@@ -10,5 +10,8 @@
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
     "resolveJsonModule": true
-  }
+  },
+  "types": [
+    "jest"
+  ]
 }
