@@ -1,8 +1,15 @@
 {
-  "name": "demandealeny-typescript-map-filter-reduce",
+  "name": "demande-a-leny-map-filter-reduce",
   "version": "0.0.0",
   "private": true,
+  "main": "src/index.ts",
   "dependencies": {
     "typescript": "^4.6.4"
-  }
+  },
+  "keywords": [
+    "filter",
+    "typescript",
+    "reduce"
+  ],
+  "description": ""
 }

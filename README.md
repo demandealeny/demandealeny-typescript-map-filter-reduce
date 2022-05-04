@@ -1,3 +1,3 @@
-# typescript-map-filter-reduce-fby17m
+# Demande à Leny - Map Filter Reduce
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/typescript-map-filter-reduce-fby17m)
+[Edit on Sandbox ⚡️](https://codesandbox.io/s/demande-a-leny-map-filter-reduce-1kg1xs)
