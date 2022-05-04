@@ -8,7 +8,7 @@ export interface Product {
   discountedPrice: number;
 }
 
-export interface Cart {
+export interface Order {
   id: number;
   total: number;
   discountedTotal: number;
@@ -18,7 +18,7 @@ export interface Cart {
   products: Product[];
 }
 
-const carts: Cart[] = [
+const orders: Order[] = [
   {
     id: 1,
     products: [
@@ -1121,4 +1121,4 @@ const carts: Cart[] = [
   },
 ];
 
-export default carts;
+export default orders;

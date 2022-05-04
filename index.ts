@@ -1,5 +1,5 @@
-import carts from "./carts";
-import type { Cart, Product } from "./carts";
+import orders from "./orders";
+import type { Order, Product } from "./orders";
 
 console.clear();
 
@@ -14,61 +14,31 @@ const bianca = {
   id: 97,
 };
 
-
-
-
-
-
-
-
-
-
-
-
 const _total = (total: number, price: number) => price + total;
 const _productTotal = (total: number, p: Product) => p.discountedPrice + total;
-const _productsTotal = (cart: Cart) => cart.products.reduce(_productTotal, 0);
+const _productsTotal = (order: Order) => order.products.reduce(_productTotal, 0);
 
-const _discountedTotal = (carts: Cart[], user: User) => {
-  const _byUser = (cart: Cart) => cart.userId === user.id;
+const _discountedTotal = (orders: order[], user: User) => {
+  const _byUser = (order: Order) => order.userId === user.id;
 
-  return carts
-    .filter(_byUser)
-    .map(_productsTotal)
-    .reduce(_total, 0);
+  return orders.filter(_byUser).map(_productsTotal).reduce(_total, 0);
 };
 
+const discountedTotal = (orders: Order[], user: User) => {
+  let userOrders: Order[] = [];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const discountedTotal = (carts: Cart[], user: User) => {
-  let userCarts: Cart[] = [];
-
-  for (const cart of carts) {
-    if (cart.userId === user.id) {
-      userCarts.push(cart);
+  for (const Order of orders) {
+    if (Order.userId === user.id) {
+      userorders.push(Order);
     }
   }
 
-  if (!userCarts.length) return 0;
+  if (!userorders.length) return 0;
 
   let total = 0;
 
-  for (const userCart of userCarts) {
-    for (const product of userCart.products) {
+  for (const userOrder of userOrders) {
+    for (const product of userOrder.products) {
       total += product.discountedPrice;
     }
   }
@@ -76,18 +46,8 @@ const discountedTotal = (carts: Cart[], user: User) => {
   return total;
 };
 
-
-
-
-
-
-
-
-
-
-
-const resultBianca = discountedTotal(carts, bianca);
-const resultBernard = discountedTotal(carts, bernard);
+const resultBianca = discountedTotal(orders, bianca);
+const resultBernard = discountedTotal(orders, bernard);
 
 console.log("Bianca paid", resultBianca);
 console.log("Bernard paid", resultBernard);
