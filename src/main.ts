@@ -3,9 +3,9 @@ import type { MainOrder as Order, MainProduct as Product, User } from "./types";
 export const discountedTotal = (orders: Order[], user: User) => {
   let userOrders: Order[] = [];
 
-  for (const Order of orders) {
-    if (Order.userId === user.id) {
-      userOrders.push(Order);
+  for (const order of orders) {
+    if (order.userId === user.id) {
+      userOrders.push(order);
     }
   }
 
