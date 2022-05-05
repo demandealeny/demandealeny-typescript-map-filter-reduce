@@ -1,6 +1,6 @@
 import { Order } from "./types";
 
-const orders: Order[] = [
+export const orders: Order[] = [
   {
     id: 1,
     products: [
@@ -1103,4 +1103,4 @@ const orders: Order[] = [
   }
 ];
 
-export default orders;
+export const products = orders.flatMap((order) => order.products);

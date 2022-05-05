@@ -1,4 +1,4 @@
-import orders from "./orders";
+import { orders } from "./data";
 import { discountedTotal } from "./main";
 
 const bernard = {

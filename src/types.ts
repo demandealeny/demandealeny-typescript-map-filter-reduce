@@ -1,3 +1,5 @@
+// DO NOT CHANGE THIS FILES
+
 export interface User {
   id: number;
 }
@@ -20,4 +22,19 @@ export interface Order {
   totalProducts: number;
   totalQuantity: number;
   products: Product[];
+}
+
+export interface MainProduct {
+  discountedPrice: number;
+}
+
+export interface MainOrder {
+  products: MainProduct[];
+  userId: User["id"];
+}
+
+export interface TrainingProduct {
+  id: Product["id"];
+  price: Product["price"];
+  discountPercentage: Product["discountPercentage"];
 }
