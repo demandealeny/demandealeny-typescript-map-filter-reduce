@@ -9,8 +9,6 @@ export const discountedTotal = (orders: Order[], user: User) => {
     }
   }
 
-  if (!userOrders.length) return 0;
-
   let total = 0;
 
   for (const userOrder of userOrders) {
@@ -21,3 +19,17 @@ export const discountedTotal = (orders: Order[], user: User) => {
 
   return total;
 };
+
+/**
+ * Filter
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+ * https://github.com/lodash/lodash/blob/master/filter.js
+ *
+ * Map
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+ * https://github.com/lodash/lodash/blob/master/map.js
+ *
+ * Reduce
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+ * https://github.com/lodash/lodash/blob/master/reduce.js
+ */
