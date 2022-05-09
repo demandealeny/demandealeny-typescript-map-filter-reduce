@@ -1,5 +1,7 @@
 import type { MainOrder as Order, MainProduct as Product, User } from "./types";
 
+console.clear();
+
 export const discountedTotal = (orders: Order[], user: User) => {
   let userOrders: Order[] = [];
 
@@ -21,6 +23,19 @@ export const discountedTotal = (orders: Order[], user: User) => {
 };
 
 /**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * Filter
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
  * https://github.com/lodash/lodash/blob/master/filter.js
