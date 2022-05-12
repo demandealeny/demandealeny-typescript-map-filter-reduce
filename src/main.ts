@@ -2,7 +2,7 @@ import type { MainOrder as Order, MainProduct as Product, User } from "./types";
 
 console.clear();
 
-export const discountedTotal = (orders: Order[], user: User) => {
+export const ordersTotal = (orders: Order[], user: User) => {
   let userOrders: Order[] = [];
 
   for (const order of orders) {
@@ -15,7 +15,7 @@ export const discountedTotal = (orders: Order[], user: User) => {
 
   for (const userOrder of userOrders) {
     for (const product of userOrder.products) {
-      total += product.discountedPrice;
+      total += product.price * product.quantity;
     }
   }
 

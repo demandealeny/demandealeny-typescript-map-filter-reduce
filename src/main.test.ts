@@ -1,5 +1,5 @@
 import { orders } from "./data";
-import { discountedTotal } from "./main";
+import { ordersTotal } from "./main";
 
 const bernard = {
   id: 83
@@ -10,10 +10,10 @@ const bianca = {
 
 describe("main", () => {
   it("discountedTotal for bernard", () => {
-    expect(discountedTotal(orders, bernard)).toEqual(1641);
+    expect(ordersTotal(orders, bernard)).toEqual(1857);
   });
 
   it("discountedTotal for bianca", () => {
-    expect(discountedTotal(orders, bianca)).toEqual(4566);
+    expect(ordersTotal(orders, bianca)).toEqual(5351);
   });
 });

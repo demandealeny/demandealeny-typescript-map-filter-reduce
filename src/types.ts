@@ -25,7 +25,8 @@ export interface Order {
 }
 
 export interface MainProduct {
-  discountedPrice: number;
+  price: Product["price"];
+  quantity: Product["quantity"];
 }
 
 export interface MainOrder {
